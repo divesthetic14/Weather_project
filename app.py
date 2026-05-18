@@ -65,7 +65,7 @@ with tab1:
         model = load_model("models/forecasting_lstm_model.h5", compile=False)
         scaler = joblib.load("models/max_temp_scaler.pkl")
     else:
-        model = load_model("models/forecasting_gru_new_tuned_model.keras", compile=False)
+        model = load_model("models/forecasting_gru_new_tuned_model.keras")
         scaler = joblib.load("models/max_temp_scaler_gru_tuned.pkl")
         
     city = st.selectbox("Select a city", weather_data["Location"].unique())
