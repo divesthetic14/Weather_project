@@ -20,7 +20,7 @@ def download_models():
         "models/kmeans_weather.pkl": "1NkRFfoexm6GxAwdUDZv-CaZQRGi1hN2w",
         "models/cluster_scaler.pkl": "1HhyVWMQPEbcxg4bk1Gk88epUYg395iUp",
         "models/forecasting_gru_tuned_model.h5": "11mzDJlQh2ECFVoVP1f8oYzqw1JBR3Cff",
-        "max_temp_scaler_gru_tuned.pkl" : "1-P58kNu0wIQDPog5rPeB13kIOCvRPcCx",
+        "models/max_temp_scaler_gru_tuned.pkl" : "1-P58kNu0wIQDPog5rPeB13kIOCvRPcCx",
     }
 
     for out_path, file_id in files.items():
@@ -30,10 +30,10 @@ def download_models():
 download_models()
 
 # Load models
-forecast_model_lstm = load_model("models/forecasting_lstm_model.h5")
+forecast_model_lstm = load_model("models/forecasting_lstm_model.h5", compile=False)
 forecast_scaler_lstm = joblib.load("models/max_temp_scaler.pkl")
 
-forecast_model_gru = load_model("models/forecasting_gru_tuned_model.h5")
+forecast_model_gru = load_model("models/forecasting_gru_tuned_model.h5", compile=False)
 forecast_scaler_gru = joblib.load("models/max_temp_scaler_gru_tuned.pkl")
 
 clf_model = joblib.load("models/classifier_rain_tomorrow.pkl")
