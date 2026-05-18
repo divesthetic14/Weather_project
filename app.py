@@ -34,7 +34,7 @@ download_models()
 forecast_model_lstm = load_model("models/forecasting_lstm_model.h5", compile=False)
 forecast_scaler_lstm = joblib.load("models/max_temp_scaler.pkl")
 
-forecast_model_gru = load_model("models/forecasting_gru_new_tuned_model.keras")
+# forecast_model_gru = load_model("models/forecasting_gru_new_tuned_model.keras")
 forecast_scaler_gru = joblib.load("models/max_temp_scaler_gru_tuned.pkl")
 
 clf_model = joblib.load("models/classifier_rain_tomorrow.pkl")
@@ -65,7 +65,7 @@ with tab1:
         model = load_model("models/forecasting_lstm_model.h5", compile=False)
         scaler = joblib.load("models/max_temp_scaler.pkl")
     else:
-        model = load_model("models/forecasting_gru_new_tuned_model.keras")
+        # model = load_model("models/forecasting_gru_new_tuned_model.keras")
         scaler = joblib.load("models/max_temp_scaler_gru_tuned.pkl")
         
     city = st.selectbox("Select a city", weather_data["Location"].unique())
