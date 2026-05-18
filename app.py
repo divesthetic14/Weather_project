@@ -72,7 +72,7 @@ with tab1:
     df_city = weather_data[weather_data["Location"] == city].copy()
     df_city['Date'] = pd.to_datetime(df_city['Date'])
     df_city = df_city.sort_values("Date")
-    df_city['MaxTemp'] = df_city['MaxTemp'].fillna(method='ffill')
+    df_city['MaxTemp'] = df_city['MaxTemp'].fillna(method='fill')
     df_city = df_city.dropna(subset=['MaxTemp'])
 
     scaled = scaler.transform(df_city[['MaxTemp']])
