@@ -9,30 +9,30 @@ import gdown
 import os
 os.environ['TF_GRAPPLER_DISABLE'] = '1'
 
-# def download_models():
-#     os.makedirs("models", exist_ok=True)
+def download_models():
+    os.makedirs("models", exist_ok=True)
 
-#     files = {
-#        "models/forecasting_lstm_model.h5": "1ywjAxavyxVoagoHitQL9HtHKzMgRUKXQ",
-#         "models/max_temp_scaler.pkl": "1_Cc0JVKZRcYf4rnOZi3zExdCg1XYfwoT",
-#         "models/classifier_rain_tomorrow.pkl": "1fzdhjugfo9l8I9MfKx850lXN2bWPuFk1",
-#         "models/classifier_scaler.pkl": "1lGmJZS8XkUXJeIhP35jSu7JAJ-UkZeZh",
-#         "models/kmeans_weather.pkl": "1NkRFfoexm6GxAwdUDZv-CaZQRGi1hN2w",
-#         "models/cluster_scaler.pkl": "1HhyVWMQPEbcxg4bk1Gk88epUYg395iUp",
-#     }
+    files = {
+       "models/forecasting_lstm_model.h5": "1ywjAxavyxVoagoHitQL9HtHKzMgRUKXQ",
+        "models/max_temp_scaler.pkl": "1_Cc0JVKZRcYf4rnOZi3zExdCg1XYfwoT",
+        "models/classifier_rain_tomorrow.pkl": "1fzdhjugfo9l8I9MfKx850lXN2bWPuFk1",
+        "models/classifier_scaler.pkl": "1lGmJZS8XkUXJeIhP35jSu7JAJ-UkZeZh",
+        "models/kmeans_weather.pkl": "1NkRFfoexm6GxAwdUDZv-CaZQRGi1hN2w",
+        "models/cluster_scaler.pkl": "1HhyVWMQPEbcxg4bk1Gk88epUYg395iUp",
+    }
 
-#     for out_path, file_id in files.items():
-#         if not os.path.exists(out_path):
-#             gdown.download(f"https://drive.google.com/uc?id={file_id}", out_path, quiet=False)
+    for out_path, file_id in files.items():
+        if not os.path.exists(out_path):
+            gdown.download(f"https://drive.google.com/uc?id={file_id}", out_path, quiet=False)
 
-# download_models()
+download_models()
 
-# # Load models
-# forecast_model_lstm = load_model("models/forecasting_lstm_tuned_model.h5")
-# forecast_scaler_lstm = joblib.load("models/max_temp_scaler_lstm_tuned.pkl")
+# Load models
+forecast_model_lstm = load_model("models/forecasting_lstm_tuned_model.h5")
+forecast_scaler_lstm = joblib.load("models/max_temp_scaler_lstm_tuned.pkl")
 
-# forecast_model_gru = load_model("models/forecasting_gru_tuned_model.h5")
-# forecast_scaler_gru = joblib.load("models/max_temp_scaler_gru_tuned.pkl")
+forecast_model_gru = load_model("models/forecasting_gru_tuned_model.h5")
+forecast_scaler_gru = joblib.load("models/max_temp_scaler_gru_tuned.pkl")
 
 clf_model = joblib.load("models/classifier_rain_tomorrow.pkl")
 clf_scaler = joblib.load("models/classifier_scaler.pkl")
