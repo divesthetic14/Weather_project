@@ -34,7 +34,7 @@ download_models()
 forecast_model_lstm = load_model("models/forecasting_lstm_model.h5", compile=False)
 forecast_scaler_lstm = joblib.load("models/max_temp_scaler.pkl")
 
-forecast_model_gru = load_model("models/forecasting_gru_new_tuned_model.keras", compile=False)
+forecast_model_gru = load_model("models/forecasting_gru_new_tuned_model.keras")
 forecast_scaler_gru = joblib.load("models/max_temp_scaler_gru_tuned.pkl")
 
 clf_model = joblib.load("models/classifier_rain_tomorrow.pkl")
