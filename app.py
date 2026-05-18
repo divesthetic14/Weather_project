@@ -21,6 +21,7 @@ def download_models():
         "models/cluster_scaler.pkl": "1HhyVWMQPEbcxg4bk1Gk88epUYg395iUp",
         "models/forecasting_gru_tuned_model.h5": "11mzDJlQh2ECFVoVP1f8oYzqw1JBR3Cff",
         "models/max_temp_scaler_gru_tuned.pkl" : "1-P58kNu0wIQDPog5rPeB13kIOCvRPcCx",
+        "models/forecasting_gru_new_tuned_model.keras": "1_D-0jLzTiLWMO5qta2_9kIbKUGcbJenS",
     }
 
     for out_path, file_id in files.items():
@@ -33,7 +34,7 @@ download_models()
 forecast_model_lstm = load_model("models/forecasting_lstm_model.h5", compile=False)
 forecast_scaler_lstm = joblib.load("models/max_temp_scaler.pkl")
 
-forecast_model_gru = load_model("models/forecasting_gru_tuned_model.h5", compile=False)
+forecast_model_gru = load_model("models/forecasting_gru_new_tuned_model.keras", compile=False)
 forecast_scaler_gru = joblib.load("models/max_temp_scaler_gru_tuned.pkl")
 
 clf_model = joblib.load("models/classifier_rain_tomorrow.pkl")
@@ -64,7 +65,7 @@ with tab1:
         model = load_model("models/forecasting_lstm_model.h5", compile=False)
         scaler = joblib.load("models/max_temp_scaler.pkl")
     else:
-        model = load_model("models/forecasting_gru_tuned_model.h5", compile=False)
+        model = load_model("models/forecasting_gru_new_tuned_model.keras", compile=False)
         scaler = joblib.load("models/max_temp_scaler_gru_tuned.pkl")
         
     city = st.selectbox("Select a city", weather_data["Location"].unique())
