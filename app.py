@@ -59,10 +59,10 @@ with tab1:
 
     # Load model and scaler
     if model_type == "LSTM":
-        model = load_model("models/forecasting_lstm_tuned_model.h5")
+        model = load_model("models/forecasting_lstm_tuned_model.h5", compile=False)
         scaler = joblib.load("models/max_temp_scaler_lstm_tuned.pkl")
     else:
-        model = load_model("models/forecasting_gru_tuned_model.h5")
+        model = load_model("models/forecasting_gru_tuned_model.h5", compile=False)
         scaler = joblib.load("models/max_temp_scaler_gru_tuned.pkl")
         
     city = st.selectbox("Select a city", weather_data["Location"].unique())
